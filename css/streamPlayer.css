@@ -1,0 +1,180 @@
+@charset "utf-8";
+header,section,article,aside,footer{
+	display: block;
+}
+
+
+#streamPlayer {
+    width: 318px;
+}
+
+#streamPlayer #topPlayer, #bottomPlayer {
+    border: 1px solid #0000;
+    background: rgb(99,99,101);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+#streamPlayer #topPlayer {
+	width: 318px;
+    height: 100px;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzNjM2NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYTJhMmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+}
+
+#streamPlayer #bottomPlayer {
+	width: 310px;
+	margin-left: 4px;
+    height: 160px;
+	border-top: 1px solid #39393b;
+    -webkit-box-shadow: inset 0px 4px 2px 0px , 0, 0, 1);
+    box-shadow: inset 0px 4px 2px 0px , 0, 0, 1);
+	overflow:hidden;
+}
+
+#streamPlayer .songInfo {
+    width: 180px;
+    max-width: 180px;
+    padding-left: 15px;
+    letter-spacing: -1px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10pt;
+    text-shadow: 1px 1px 1px #000000;
+    filter: dropshadow(color=#333333, offx=0.6, offy=0.6);
+    float: left;
+}
+
+#streamPlayer #songTitle {
+    padding-top: 10px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+#streamPlayer #songArtist {
+    padding-top: 1px;
+    letter-spacing: -1px;
+    color: #b4b6b8;
+    white-space: nowrap;
+}
+
+#streamPlayer #songContainer {
+    width: 210px;
+    float: left;
+}
+
+#streamPlayer #coverContainer {
+    border-left: 1px solid #000;
+    width: 105px;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+#streamPlayer #coverContainer img {
+    width: 80px;
+    margin-top: 5px;
+    border: 5px solid #29292b;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
+
+#streamPlayer #bottomPlaylist {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#streamPlayer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#streamPlayer li {
+    width: 100%;
+    overflow: hidden;
+    padding: 8px;
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    white-space: nowrap;
+}
+
+#streamPlayer li:nth-child(even) {
+    background-color: #3a3a43;
+    z-index: -2;
+}
+
+#streamPlayer #songPlayer {
+    height: 30px;
+    width: 190px;
+    float: left;
+    margin-top: 7px;
+    margin-left: 5px;
+    display: block;
+    overflow: hidden;
+	border: 5px solid #29292b;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+	background-image:url(../images/player_bg.png);
+	background-repeat:repeat-x;
+}
+#streamPlayer #playerStart {
+	background-image:url(../images/player_play.png);
+	background-repeat:no-repeat;
+	background-position: 10px 7px;
+	height: 30px;
+	width: 30px;
+	border-right: 1px solid #151515;
+	float: left;
+	cursor:pointer;
+    display: none;
+}
+#streamPlayer #playerPause {
+    background-image:url(../images/player_pause.png);
+    background-repeat:no-repeat;
+    background-position: 9px 7px;
+    height: 30px;
+    width: 30px;
+    border-right: 1px solid #151515;
+    float: left;
+    cursor:pointer;
+}
+#streamPlayer #playerPlaylist {
+	background-image:url(../images/player_playlist.png);
+	background-repeat:no-repeat;
+	background-position: 6px 9px;
+	height: 30px;
+	width: 30px;
+	border-right: 1px solid #151515;
+	float: left;
+	cursor:pointer;
+}
+#streamPlayer #playerVolume {
+	background-repeat:no-repeat;
+	background-position: 12px 7px;
+	height: 30px;
+	width: 30px;
+	float: left;
+	cursor:pointer;
+}
+#streamPlayer #playerRange {
+	height: 30px;
+	border-right: 1px solid #151515;
+	float: left;
+	position:relative;
+	width: auto;
+}
+#streamPlayer footer {
+	float:right;
+}
+#streamPlayer footer, footer a {
+    font-size: 9px;
+    font-family: 'Open Sans', sans-serif;
+    color: #888;
+}
+#playerObject, #playerObject_wrapper {
+    z-index: -9999999;
+}
