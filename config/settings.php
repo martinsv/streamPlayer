@@ -17,9 +17,9 @@
  * STREAM_PORT is the port where your radio is accessible e.g. 8000
  * STREAM_ADM_PASS is your SHOUTcast Server's admin password
  */
-define('STREAM_HOSTNAME', '46.38.235.233');
-define('STREAM_PORT', 9008);
-define('STREAM_ADM_PASS', 'testing');
+define('STREAM_HOSTNAME', '127.0.0.1');
+define('STREAM_PORT', 8000);
+define('STREAM_ADM_PASS', 'password');
 
 /**
  * Define player constant settings
