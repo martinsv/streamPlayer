@@ -21,7 +21,6 @@ class streamPlayer {
         $this->serverHostname = $serverHostname;
         $this->serverPort = (int) $serverPort;
         $this->adminPass = $adminPass;
-        $this->getXML();
     }
 
     public function getXML() {
