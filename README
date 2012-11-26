@@ -1,0 +1,32 @@
+*** djcrackhome's streamPlayer ***
+
+> Description of this script:
+    streamPlayer is an easy to use web-player for Nullsoft's SHOUTcast Server stream.
+    It is written in HTML5 with flash fallback. It uses Apple iTunes' search API to collect
+    the cover information of the current track.
+
+    To edit the config file in e.g. 'define('STREAM_HOSTNAME', '127.0.0.1');' you will need
+    to change the string "127.0.0.1" (without the " ) to your desired hostname. Please do
+    so with all other constants.
+
+    Current setting is set to split on '-', so e.g.
+    *   Psy - Gangnam Style
+    Then the artist would be: 'Psy', and title 'Gangnam Style', after being trimmed.
+    The current title will be searched over Apple iTunes' search API, check this URL to
+    collect more information about this service (More search APIs will be added in the future):
+    *   http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html#searching
+
+    The HTML file is HTML5-valid,
+
+> How-to get started:
+    # Open config/settings.php with a file editor
+    # Change all necessary constants
+    # Upload all files onto your web-space and enjoy :)
+
+> License: This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+
+> Thanks to:
+    * Raimund B.
+    * Nico N. <github.com/peaceman>
+    * Patrick E.

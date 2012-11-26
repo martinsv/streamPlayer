@@ -1,5 +1,5 @@
 /**
- * stream.cx: streamPlayer
+ * djcrackhome's streamPlayer
  *
  * Developer: djcrackhome <sgraebner@my.canyons.edu>
  * Thanks to Raimund B., Nico N., Patrick E.
@@ -7,17 +7,58 @@
  * License: This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
  *
+ * URL: https://github.com/djcrackhome/streamPlayer
  */
+
 $(document).ready(function () {
     var stopVolume; // Stores retrieval volume when volume is set on mute
 
+    setConfig();
     initScrollBar();
-    initPlayer();
     initControls();
     getValues();
-    window.setInterval(updateValues, 15000);
+
+    function setConfig() {
+        $.ajax({
+            url: 'assets/php/streamPlayer.php?get=config',
+            type: 'GET',
+            contentType: 'application/json',
+            dataType: 'jsonp',
+            success: function (json) {
+                if (json.player.PLAYER_INIT_PLAYLIST)
+                    $("#bottomPlayer").show();
+                initPlayer(json);
+                window.setInterval(updateValues, json.player.PLAYER_UPDATE_INTERVAL);
+            },
+            error: function (xhr, status) {
+                alert(status);
+            }
+        });
+    }
 
     function initScrollBar() {
+        var slider  = $('#slider');
+        slider.slider({
+            range: "min",
+            min: 1,
+            value: 80,
+            slide: function(event, ui) {
+                var value  = slider.slider('value'),
+                    volume = $('.volume');
+                if(value <= 5) {
+                    volume.css('background-position', '0 0');
+                }
+                else if (value <= 25) {
+                    volume.css('background-position', '0 -25px');
+                }
+                else if (value <= 75) {
+                    volume.css('background-position', '0 -50px');
+                }
+                else {
+                    volume.css('background-position', '0 -75px');
+                };
+            }
+        });
         $("#bottomPlaylist").mCustomScrollbar({
             scrollButtons: {
                 enable: true,
@@ -28,13 +69,13 @@ $(document).ready(function () {
         });
     }
 
-    function initPlayer() {
+    function initPlayer(json) {
         var streamConfig = {
             'screencolor': '000000',
             'controlbar': 'none',
             'width': '1',
             'height': '1',
-            'volume': '80',
+            'volume': json.player.PLAYER_INIT_VOLUME,
             'plugins': {
                 'audiolivestream-1': {
                     format: ' ',
@@ -43,11 +84,11 @@ $(document).ready(function () {
                     trackCss: 'color: #fff; font-size: 1px;'
                 }
             },
-            'file': 'http://46.38.235.233:9008/;stream.mp3',
-            'autostart': 'true',
+            'file': 'http://'+json.stream.STREAM_HOSTNAME+':'+json.stream.STREAM_PORT+'/;stream.mp3',
+            'autostart': json.player.PLAYER_AUTO_START,
             'modes': [{
                 type: 'flash',
-                src: 'swf/player.swf'
+                src: 'assets/swf/player.swf'
             }]
         }
         jwplayer('playerObject').setup(streamConfig);
@@ -92,7 +133,7 @@ $(document).ready(function () {
     }
 
     function getValues() {
-        $.getJSON('php/streamPlayer.php', function (json) {
+        $.getJSON('assets/php/streamPlayer.php', function (json) {
             $("#bottomPlaylistListing").empty();
             $.each(json.SONG, function (key, value) {
                 var songArray = value.TITLE.split('-');
@@ -109,7 +150,7 @@ $(document).ready(function () {
     }
 
     function updateValues() {
-        $.getJSON('php/streamPlayer.php', function (json) {
+        $.getJSON('assets/php/streamPlayer.php', function (json) {
             var songArray = json.SONG[0].TITLE.split('-');
             if (!songArray[1]) {
                 if ($("#songTitle").html() != '[no.title]') getValues();

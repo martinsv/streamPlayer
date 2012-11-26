@@ -1,4 +1,15 @@
 <?php
+/**
+ * djcrackhome's streamPlayer
+ *
+ * Developer: djcrackhome <sgraebner@my.canyons.edu>
+ * Thanks to Raimund B., Nico N., Patrick E.
+ *
+ * License: This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+ *
+ * URL: https://github.com/djcrackhome/streamPlayer
+ */
 
 class streamPlayer {
     private $serverHostname;
@@ -47,8 +58,3 @@ class streamPlayer {
     }
 
 }
-
-$streamPlayer = new streamPlayer('46.38.235.233', 9008, 'testing');
-$streamPlayer->getJSON();
-
-?>

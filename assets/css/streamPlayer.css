@@ -1,16 +1,14 @@
 @charset "utf-8";
-header,section,article,aside,footer{
+#streamPlayer header,#streamPlayer section,#streamPlayer article,#streamPlayer aside,#streamPlayer footer{
 	display: block;
 }
-
 
 #streamPlayer {
     width: 318px;
 }
 
 #streamPlayer #topPlayer, #bottomPlayer {
-    border: 1px solid #0000;
-    background: rgb(99,99,101);
+    border: 1px solid #333;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -19,17 +17,26 @@ header,section,article,aside,footer{
 #streamPlayer #topPlayer {
 	width: 318px;
     height: 100px;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzNjM2NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYTJhMmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: #636365;
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYzNjM2NSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzMzMzQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
+    background: -moz-linear-gradient(top,  #636365 0%, #333334 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#636365), color-stop(100%,#333334));
+    background: -webkit-linear-gradient(top,  #636365 0%,#333334 100%);
+    background: -o-linear-gradient(top,  #636365 0%,#333334 100%);
+    background: -ms-linear-gradient(top,  #636365 0%,#333334 100%);
+    background: linear-gradient(to bottom,  #636365 0%,#333334 100%);
 }
-
 #streamPlayer #bottomPlayer {
-	width: 310px;
+    background: rgb(99,99,101);
+    width: 310px;
 	margin-left: 4px;
     height: 160px;
 	border-top: 1px solid #39393b;
-    -webkit-box-shadow: inset 0px 4px 2px 0px , 0, 0, 1);
-    box-shadow: inset 0px 4px 2px 0px , 0, 0, 1);
 	overflow:hidden;
+    display: none;
+    box-shadow: inset 0px 4px 2px #222;
+    -moz-box-shadow: inset 0px 4px 2px #222;
+    -webkit-box-shadow: inset 0px 4px 2px #222;
 }
 
 #streamPlayer .songInfo {
@@ -40,7 +47,6 @@ header,section,article,aside,footer{
     font-family: 'Open Sans', sans-serif;
     font-size: 10pt;
     text-shadow: 1px 1px 1px #000000;
-    filter: dropshadow(color=#333333, offx=0.6, offy=0.6);
     float: left;
 }
 
@@ -103,7 +109,6 @@ header,section,article,aside,footer{
 
 #streamPlayer li:nth-child(even) {
     background-color: #3a3a43;
-    z-index: -2;
 }
 
 #streamPlayer #songPlayer {
@@ -121,51 +126,38 @@ header,section,article,aside,footer{
 	background-image:url(../images/player_bg.png);
 	background-repeat:repeat-x;
 }
-#streamPlayer #playerStart {
-	background-image:url(../images/player_play.png);
-	background-repeat:no-repeat;
-	background-position: 10px 7px;
-	height: 30px;
-	width: 30px;
-	border-right: 1px solid #151515;
-	float: left;
-	cursor:pointer;
-    display: none;
-}
-#streamPlayer #playerPause {
-    background-image:url(../images/player_pause.png);
+#streamPlayer .playerButton {
     background-repeat:no-repeat;
-    background-position: 9px 7px;
     height: 30px;
     width: 30px;
     border-right: 1px solid #151515;
     float: left;
     cursor:pointer;
 }
+#streamPlayer #playerStart {
+	background-image:url(../images/player_play.png);
+	background-position: 10px 7px;
+    display: none;
+}
+#streamPlayer #playerPause {
+    background-image:url(../images/player_pause.png);
+    background-position: 9px 7px;
+}
 #streamPlayer #playerPlaylist {
 	background-image:url(../images/player_playlist.png);
-	background-repeat:no-repeat;
 	background-position: 6px 9px;
-	height: 30px;
-	width: 30px;
-	border-right: 1px solid #151515;
-	float: left;
-	cursor:pointer;
 }
 #streamPlayer #playerVolume {
 	background-repeat:no-repeat;
 	background-position: 12px 7px;
-	height: 30px;
-	width: 30px;
-	float: left;
-	cursor:pointer;
+    border-right: none;
 }
 #streamPlayer #playerRange {
 	height: 30px;
-	border-right: 1px solid #151515;
+    width: auto;
+    border-right: 1px solid #151515;
 	float: left;
-	position:relative;
-	width: auto;
+    position:relative;
 }
 #streamPlayer footer {
 	float:right;
@@ -175,6 +167,6 @@ header,section,article,aside,footer{
     font-family: 'Open Sans', sans-serif;
     color: #888;
 }
-#playerObject, #playerObject_wrapper {
+#streamPlayer #playerObject, #streamPlayer #playerObject_wrapper {
     z-index: -9999999;
 }
