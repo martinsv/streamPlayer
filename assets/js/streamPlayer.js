@@ -15,7 +15,6 @@ $(document).ready(function () {
 
     setConfig();
     initScrollBar();
-    initControls();
     getValues();
 
     function setConfig() {
@@ -25,10 +24,10 @@ $(document).ready(function () {
             contentType: 'application/json',
             dataType: 'jsonp',
             success: function (json) {
-                if (json.player.PLAYER_INIT_PLAYLIST)
-                    $("#bottomPlayer").show();
                 initPlayer(json);
+                initControls(json);
                 window.setInterval(updateValues, json.player.PLAYER_UPDATE_INTERVAL);
+
             },
             error: function (xhr, status) {
                 alert(status);
@@ -94,19 +93,22 @@ $(document).ready(function () {
         jwplayer('playerObject').setup(streamConfig);
     }
 
-    function initControls() {
+    function initControls(json) {
+        if (!json.player.PLAYER_AUTO_START) {
+            $("#playerStart").show(0);
+            $("#playerPause").hide(0);
+        }
+        if (json.player.PLAYER_INIT_PLAYLIST)
+            $("#bottomPlayer").show();
         $("#playerStart").click(function () {
             $("#playerStart").hide(0);
             $("#playerPause").show(0);
-            if (jwplayer('playerObject').getState() == 'PAUSED') jwplayer('playerObject').play(true);
-            else jwplayer('playerObject').play(false);
-
+            jwplayer('playerObject').play(true);
         });
         $("#playerPause").click(function () {
             $("#playerPause").hide(0);
             $("#playerStart").show(0);
-            if (jwplayer('playerObject').getState() == 'PAUSED') jwplayer('playerObject').play(true);
-            else jwplayer('playerObject').play(false);
+            jwplayer('playerObject').play(false);
         });
         $("#playerPlaylist").click(function () {
             $("#bottomPlayer").slideToggle();

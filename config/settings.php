@@ -17,9 +17,9 @@
  * STREAM_PORT is the port where your radio is accessible e.g. 8000
  * STREAM_ADM_PASS is your SHOUTcast Server's admin password
  */
-define('STREAM_HOSTNAME', '127.0.0.1');
-define('STREAM_PORT', 8000);
-define('STREAM_ADM_PASS', 'password');
+define('STREAM_HOSTNAME', '85.114.128.96');
+define('STREAM_PORT', 8002);
+define('STREAM_ADM_PASS', '0sykibxpmp');
 
 /**
  * Define player constant settings
@@ -28,7 +28,7 @@ define('STREAM_ADM_PASS', 'password');
  * PLAYER_INIT_PLAYLIST, a boolean, defines if the playlist should be initialized visible
  * PLAYER_UPDATE_INTERVAL defines the interval for the refresh-rate of the meta data
  */
-define('PLAYER_AUTO_START', true);
+define('PLAYER_AUTO_START', false);
 define('PLAYER_INIT_VOLUME', 80);
 define('PLAYER_INIT_PLAYLIST', true);
 define('PLAYER_UPDATE_INTERVAL', 15000);
