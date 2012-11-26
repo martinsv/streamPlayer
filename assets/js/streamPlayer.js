@@ -175,7 +175,7 @@ $(document).ready(function () {
                 if (json.resultCount != 0) {
                     $("#coverContainerImage").attr('src', json.results[0].artworkUrl100);
                 } else {
-                    $("#coverContainerImage").attr('src', './images/no_cov.png');
+                    $("#coverContainerImage").attr('src', './assets/images/no_cov.png');
                 }
             }
             /*,

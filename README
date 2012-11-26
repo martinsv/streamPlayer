@@ -16,7 +16,7 @@
     collect more information about this service (More search APIs will be added in the future):
     *   http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html#searching
 
-    The HTML file is HTML5-valid,
+    The HTML file is HTML5-valid, and the script's CSS file is valid with CSS3, too.
 
 > How-to get started:
     # Open config/settings.php with a file editor
@@ -30,3 +30,10 @@
     * Raimund B.
     * Nico N. <github.com/peaceman>
     * Patrick E.
+
+> This script contains the following scripts:
+    * JWPlayer <http://www.longtailvideo.com/jw-player/>
+    * malihu custom scrollbar plugin <http://manos.malihu.gr>
+    * Modernizr <http://www.modernizr.com/>
+    * Custom JQuery UI Slider <http://www.hongkiat.com/blog/jquery-volumn-slider/>
+    * and of course thanks a lot to JQuery <http://www.jquery.com>
